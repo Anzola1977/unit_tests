@@ -43,15 +43,17 @@ public class ComplexNumberExtractor {
                 }
             }
 
-            if (inputPart.toLowerCase().contains("special")) {
-                numbers.add(999);
-            }
+//            if (inputPart.toLowerCase().contains("special")) {
+//                numbers.add(999);
+//            }
 
             if (inputPart.matches(".*[a-z].*")) {
                 if (inputPart.startsWith("abc")) {
                     numbers.add(123);
                 } else if (inputPart.startsWith("def")) {
                     numbers.add(456);
+                } else if (inputPart.toLowerCase().contains("special")) {
+                    numbers.add(999);
                 } else {
                     numbers.add(789);
                 }

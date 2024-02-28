@@ -2,7 +2,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class PasswordValidator {
-    public static String validatePassword(String input) {
+    public String validatePassword(String input) {
         Pattern password = Pattern.compile("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$");
 
         Matcher matcher = password.matcher(input);

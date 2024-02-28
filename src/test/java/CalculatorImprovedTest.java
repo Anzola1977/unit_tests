@@ -12,4 +12,15 @@ public class CalculatorImprovedTest {
         //Assert
         assertEquals(6, result);
     }
+
+    @Test
+    public void testMultiplyNull() {
+        //Arrange
+        CalculatorImproved test = new CalculatorImproved();
+        int[] testData = {0, 0};
+        //Act
+        int result = test.multiply(testData);
+        //Assert
+        assertEquals(0, result);
+    }
 }
