@@ -23,4 +23,15 @@ public class CalculatorImprovedTest {
         //Assert
         assertEquals(0, result);
     }
+
+    @Test
+    public void testMultiplyOne() {
+        //Arrange
+        CalculatorImproved test = new CalculatorImproved();
+        int[] testData = {1, 1};
+        //Act
+        int result = test.multiply(testData);
+        //Assert
+        assertEquals(1, result);
+    }
 }

@@ -15,6 +15,16 @@ public class ComplexNumberExtractorTest {
     }
 
     @Test
+    public void validateNull2(){
+        int result = 0;
+        List<Integer> numbers = ComplexNumberExtractor.extractNumbers("00-000-0000 000-0000");
+        for (int i = 0; i < numbers.size(); i++) {
+            result = numbers.get(i);
+        }
+        assertEquals(0, result);
+    }
+
+    @Test
     public void validateGroups(){
         int result = 0;
         List<Integer> number = ComplexNumberExtractor.extractNumbers("123-3456 23-789-5673");
@@ -22,6 +32,16 @@ public class ComplexNumberExtractorTest {
             result = number.get(i);
         }
         assertEquals(6462, result);
+    }
+
+    @Test
+    public void validateGroupsAndLetters(){
+        int result = 0;
+        List<Integer> number = ComplexNumberExtractor.extractNumbers("23-789-5673 wer234");
+        for (int i = 0; i < number.size(); i++) {
+            result = number.get(i);
+        }
+        assertEquals(234, result);
     }
 
     @Test
@@ -78,6 +98,16 @@ public class ComplexNumberExtractorTest {
             result = number.get(i);
         }
         assertEquals(555, result);
+    }
+
+    @Test
+    public void validateLetterAndDigits(){
+        int result = 0;
+        List<Integer> number = ComplexNumberExtractor.extractNumbers("isawpeople234");
+        for (int i = 0; i < number.size(); i++) {
+            result = number.get(i);
+        }
+        assertEquals(234, result);
     }
 
     @Test
